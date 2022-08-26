@@ -1,0 +1,42 @@
+@use 'variables' as *;
+
+header {
+    font-size: 14px;
+    background:
+        repeating-linear-gradient(135deg,
+            transparent 10px,
+            rgba(14, 0, 0, 0.1) 20px),
+        repeating-linear-gradient(-135deg,
+            transparent 10px,
+            rgba(14, 0, 0, 0.1) 20px),
+        $color-darck;
+    color: $color-element;
+
+    p {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0 10px;
+    }
+    .max-width-content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0 20px;
+
+        div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 0 20px;
+        }
+    }
+
+    .max-width-content>* {
+        flex: 1 1 auto;
+    }
+
+}

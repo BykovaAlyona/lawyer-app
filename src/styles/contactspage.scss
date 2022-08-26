@@ -1,0 +1,72 @@
+@use 'variables' as *;
+
+#contactspage {
+    p {
+        text-indent: 0em !important;
+    }
+
+    svg {
+        fill: rgb(212, 145, 19);
+    }
+
+    .max-width-content {
+        margin: 0;
+    }
+
+    section {
+        background-color: $color-light;
+    }
+
+    div {
+        margin-top: 60px;
+    }
+
+    legend {
+        color: $color-darck;
+    }
+
+    iframe {
+        height: 450px;
+        width: 100%;
+        border: none;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        box-shadow: 0 0 5px rgba(20, 8, 2, 0.8);
+        margin-top: 50px;
+    }
+
+    h2 {
+        text-decoration: none;
+    }
+
+    #contacts>div {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 0 80px;
+
+        svg {
+            padding: 0;
+            flex: none;
+        }
+
+        span {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        #p-tel {
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+            gap: 10px 60px;
+            flex-wrap: wrap;
+
+            span {
+                flex: 1 0 200px;
+                white-space: nowrap;
+            }
+        }
+    }
+}

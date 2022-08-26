@@ -1,0 +1,388 @@
+@use 'variables' as *;
+@use 'mixin' as *;
+@use 'keyframes' as *;
+
+main {
+
+    #card,
+    #resume,
+    #description,
+    #guarantees,
+    #consultation,
+    #servicespage {
+        .max-width-content {
+            margin: 50px 30px;
+            padding: 50px 5px;
+        }
+    }
+
+    #card,
+    #resume,
+    #description,
+    #guarantees,
+    #consultation {
+        overflow: hidden;
+
+        h1,
+        h2,
+        h3 {
+            @include animation-name(show-h123);
+            @include animation-delay(0s);
+        }
+
+        h4,
+        h5,
+        h6 {
+            @include animation-name(show-h456);
+            @include animation-delay(0.2s);
+        }
+
+        p,
+        ul,
+        textarea,
+        button,
+        input {
+            @include animation-name(show-p);
+            @include animation-delay(0.4s);
+        }
+
+        img {
+            @include animation-name(show-img);
+            @include animation-delay(0.6s);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        img,
+        p,
+        ul,
+        textarea,
+        button,
+        input {
+            @include animation-duration(1.2s);
+            @include animation-fill-mode(both);
+            @include animation-play-state(paused);
+        }
+
+        &.show-element {
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            img,
+            p,
+            ul,
+            textarea,
+            button,
+            input {
+                @include animation-play-state(running);
+            }
+        }
+    }
+
+    #card {
+        background-color: $color-brown;
+        color: $color-white;
+        text-align: center;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            opacity: 0.2;
+            content: '';
+            background:
+                linear-gradient(180deg,
+                    rgba(43, 3, 3, 0.5) 0%,
+                    transparent 10% 100%),
+                linear-gradient(0deg,
+                    rgba(43, 3, 3, 0.6) 0%,
+                    transparent 20% 100%),
+                url(../img/fon_card.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .max-width-content {
+            border: rgba(245, 203, 126, 0.5) solid 3px;
+            box-shadow: inset 0 0 5px rgb(56, 25, 7);
+            padding: 70px 5px;
+        }
+
+        h2 {
+            font-family: 'PT Sans', sans-serif;
+            color: $color-element;
+        }
+
+        h1,
+        h2,
+        svg {
+            padding: 10px 0;
+            margin: 0;
+        }
+
+        svg {
+            height: 20px;
+        }
+    }
+
+    #resume {
+        background:
+            linear-gradient(190deg,
+                transparent 0% 250px,
+                rgba(214, 183, 126, 0.08) 250px 400px,
+                transparent 400px 100%),
+            linear-gradient(160deg,
+                transparent 0 20%,
+                rgba(245, 203, 126, 0.1) 20% 40%,
+                transparent 40% 100%),
+            linear-gradient(160deg,
+                transparent 0% 70%,
+                rgba(43, 3, 3, 0.1) 70% 100%),
+            linear-gradient(190deg,
+                transparent 0% 85%,
+                rgba(71, 9, 9, 0.1) 85% 100%),
+            $color-light;
+        color: $color-darck;
+
+        h4 {
+            color: $color-brown;
+        }
+
+        .flex-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+
+            div {
+                flex: 1 0 100px;
+            }
+
+            img {
+                min-width: 200px;
+                max-width: 400px;
+                border: solid 1px $color-brown;
+                box-shadow: 0 0 10px $color-brown;
+            }
+
+            @media screen and (max-width:800px) {
+                flex-direction: column;
+
+                img {
+                    width: 80%;
+                }
+            }
+        }
+
+    }
+
+    #description {
+        background-color: $color-brown;
+        color: $color-element;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            z-index: 0;
+            left: 0;
+            top: 0;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background:
+                linear-gradient(20deg,
+                    rgba(10, 0, 0, 0.8) 0%,
+                    rgba(10, 0, 0, 0.5)35%,
+                    transparent 35% 100%),
+                linear-gradient(-10deg,
+                    rgba(255, 255, 255, 0.2) 0% 10%,
+                    transparent 10% 100%),
+                linear-gradient(45deg,
+                    rgba(20, 1, 1, 0.5) 0% 40%,
+                    transparent 40% 100%),
+                linear-gradient(135deg,
+                    rgba(255, 255, 255, 0.3) 0% 20%,
+                    transparent 20% 100%);
+            opacity: 0.5;
+        }
+
+        div {
+            position: relative;
+
+            li {
+                list-style-type: none;
+
+                &::before {
+                    color: $color-light;
+                    content: "❖ ";
+                }
+            }
+
+            h2 {
+                margin-bottom: 50px;
+            }
+
+            h4 {
+                color: $color-light;
+            }
+
+            &::before {
+                @include transform(rotate(-5deg));
+                position: absolute;
+                z-index: 0;
+                right: 10px;
+                bottom: 0;
+                content: '';
+                width: 100%;
+                height: 100%;
+                background: url(../img/certificate.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: right bottom;
+                opacity: 0.4;
+            }
+        }
+    }
+
+    #guarantees {
+        text-align: center;
+        background: $color-light;
+        color: $color-darck;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            opacity: 0.45;
+            top: 0;
+            left: 0;
+            content: '';
+            background:
+                linear-gradient(-135deg,
+                    rgba(71, 9, 9, 0.3),
+                    rgba(71, 9, 9, 0.2)),
+                url(../img/fon_guarantees.jpg);
+            background-position: bottom center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        div {
+            box-shadow:
+                inset 0 0 2px rgba(0, 0, 0, 0.5),
+                0 0 2px rgba(0, 0, 0, 0.5);
+            border: rgba(53, 5, 5, 0.5) solid 3px;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                opacity: 0.2;
+                top: 0;
+                left: 0;
+                content: '';
+                background:
+                    linear-gradient(190deg,
+                        $color-brown 0% 20%,
+                        transparent 20% 100%),
+                    linear-gradient(10deg,
+                        $color-brown 0% 20%,
+                        transparent 20% 100%),
+                    linear-gradient(165deg,
+                        rgba(255, 255, 255, 0.4) 0% 50%,
+                        transparent 50% 100%);
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            margin: 0 15px 20px;
+
+            li {
+                flex: 1 1 250px;
+            }
+
+            @media screen and (max-width: 770px) {
+                flex-direction: column;
+
+                li {
+                    flex: none;
+                }
+            }
+        }
+
+        h2 {
+            font-size: 35px;
+            display: inline-block;
+            margin-bottom: 50px;
+            margin-top: 30px;
+            color: rgb(116, 18, 18);
+            text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.795);
+        }
+
+        h4 {
+            padding: 30px;
+            color: $color-element;
+            position: relative;
+            box-shadow: 1px 1px 3px #000;
+
+            &::before {
+                background:
+                    linear-gradient(-30deg,
+                        rgba(43, 3, 3, 0.4) 0% 40%,
+                        transparent 40% 100%),
+                    linear-gradient(-10deg,
+                        rgba(43, 3, 3, 0.6) 0% 30%,
+                        transparent 30% 100%),
+                    linear-gradient(70deg,
+                        rgba(255, 255, 255, 0.05) 0% 10%,
+                        transparent 10% 100%),
+                    linear-gradient(100deg,
+                        rgba(255, 255, 255, 0.05) 0% 10%,
+                        transparent 10% 100%),
+                    $color-brown;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                top: 0;
+                left: 0;
+                content: '';
+                opacity: 0.8;
+            }
+        }
+    }
+
+    #consultation-link {
+        display: block;
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #consultation {
+        background-color: $color-brown;
+        color: $color-white;
+
+        legend {
+            text-align: center;
+            color: $color-element;
+        }
+    }
+}
