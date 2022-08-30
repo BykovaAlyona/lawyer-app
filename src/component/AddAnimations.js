@@ -8,7 +8,7 @@ export default function AddAnimations() {
     }
 
     let options = {
-        threshold: [0.2]
+        threshold: [0.1]
     };
     let observer = new IntersectionObserver(onEntry, options);
     let elements = document.querySelectorAll('#card,  #resume,  #description,  #guarantees,  #consultation');

@@ -63,7 +63,7 @@ main {
         textarea,
         button,
         input {
-            @include animation-duration(1.2s);
+            @include animation-duration(1s);
             @include animation-fill-mode(both);
             @include animation-play-state(paused);
         }

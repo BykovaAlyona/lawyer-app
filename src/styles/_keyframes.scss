@@ -1,59 +1,62 @@
+@use 'mixin' as *;
+
 @keyframes show-p {
     0% {
         opacity: 0;
-        transform: translatey(30px);
+        @include transform(translatey(30px));
     }
 
     100% {
         opacity: 1;
-        transform: translatey(0);
+        @include transform(translatey(0));
     }
 }
 
 @keyframes show-h123 {
     0% {
         opacity: 0;
-        transform: translatey(-50px);
+        @include transform(translatey(-50px));
     }
 
     100% {
         opacity: 1;
-        transform: translatey(0);
+        @include transform(translatey(0));
     }
 }
 
 @keyframes show-h456 {
     0% {
         opacity: 0;
-        transform: translatey(-50px);
+        @include transform(translatey(-50px));
     }
 
     100% {
         opacity: 1;
-        transform: translatey(0);
+        @include transform(translatey(0));
     }
 }
 
-@keyframes show-img{
+@keyframes show-img {
     0% {
         opacity: 0;
-        transform: scale(0.9);
+        @include transform(scale(0.9));
     }
 
     100% {
         opacity: 1;
-        transform: scale(1);
+        @include transform(scale(1));
     }
 }
+
 /*
 @keyframes show-menu{
     0% {
         opacity: 0;
-        transform: scale(0.9);
+        @include transform(scale(0.9);
     }
 
     100% {
         opacity: 1;
-        transform: scale(1);
+        @include transform(scale(1);
     }
 }*/
