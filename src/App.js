@@ -8,15 +8,16 @@ import ServicesPage from "./pages/ServicesPage";
 import ContactsPage from "./pages/ContactsPage";
 import PracticePage from "./pages/PracticePage";
 import { services } from "./const/services";
+import { BrowserRouter } from "react-router-dom";
 
 export default function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header />
       <Nav />
       <main className="App">
         <Routes>
-
+          <Route path="/" element={<MainPage />} />
           {services.map((service) =>
             <Route path={`/services/${service.id}`}
               element={service.element}
@@ -26,7 +27,6 @@ export default function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/practice" element={<PracticePage />} />
           <Route path="/contacts" element={<ContactsPage />} />
-          <Route path="/" element={<MainPage />} />
           <Route path="*" element={
             <p id="notfound">
               <h1>Ошибка 404</h1>
@@ -36,7 +36,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
 

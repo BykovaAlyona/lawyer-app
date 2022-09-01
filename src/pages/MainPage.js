@@ -18,7 +18,7 @@ export default function MainPageComponent() {
                     content="Адвокат Быков Игорь Александрович. Свердловская областная коллегия адвокатов. Обширная практика в Свердловской, Челябинской, Курганской областях и других регионах России. Юридическая помощь различных сферах. Записаться на консультацию." />
                 <link rel="canonical" href="/" />
             </Helmet>
-            <>
+            <div>
                 <div id="card" className="div-center">
                     <div className="max-width-content">
                         <h2>Адвокат</h2>
@@ -80,7 +80,7 @@ export default function MainPageComponent() {
                         <Consultation header={"Записаться на консультацию"} />
                     </div>
                 </div>
-            </>
+            </div>
         </>
     );
 }
