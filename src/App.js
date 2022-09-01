@@ -16,17 +16,17 @@ export default function App() {
       <Nav />
       <main className="App">
         <Routes>
-          <Route path="/" element={<MainPage />}
-          />
+
           {services.map((service) =>
             <Route path={`/services/${service.id}`}
               element={service.element}
               key={`route_${service.id}`}
             />
           )}
-          <Route path="/services/" element={<ServicesPage/>} />
+          <Route path="/services" element={<ServicesPage />} />
           <Route path="/practice" element={<PracticePage />} />
           <Route path="/contacts" element={<ContactsPage />} />
+          <Route path="/" element={<MainPage />} />
           <Route path="*" element={
             <p id="notfound">
               <h1>Ошибка 404</h1>
