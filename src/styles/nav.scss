@@ -34,6 +34,8 @@ nav {
 
     #check-menu:checked~label {
         content: url('../img/closemenu.svg');
+        width: 20px;
+        height: 20px;
     }
 
     #check-submenu+label {
@@ -56,21 +58,20 @@ nav {
         justify-content: space-between;
         gap: 20px;
         background-color: $color-white;
+        position: static;
     }
 
 
     #menu {
-        @include transition(0.4s linear);
 
         &>li {
-            @include transition(0.3s linear);
-
             &>a {
                 padding: 25px 20px;
             }
 
             a {
                 display: block;
+                    @include transition(0.4s linear);
 
                 &:hover {
                     background-color: $color-element;
@@ -88,7 +89,6 @@ nav {
                 overflow-y: auto;
                 max-height: 80vh;
                 max-width: 80vw;
-                @include transition(0.6s linear);
                 opacity: 0;
                 visibility: hidden;
                 height: 0;
@@ -123,17 +123,17 @@ nav {
             width: 100%;
             height: 100%;
             overflow-y: auto;
+            overflow-x: hidden;
             background-color: rgba(15, 3, 3, 0.7);
 
             #menu {
                 margin: 60px 10px;
-                padding: 30px;
+                padding: 30px 60px 30px 30px;
                 box-shadow: 0 0 30px rgba(15, 3, 3, 0.8);
                 background-color: $color-white;
+                overflow-x: hidden;
 
                 &>li {
-                    border: 1px solid rgba(83, 83, 83, 0.3);
-
                     &#li-services {
                         display: flex;
                         flex-direction: row;
@@ -172,14 +172,14 @@ nav {
             flex-direction: column;
             align-items: center;
         }
-
         #check-menu:checked~label {
-            position: fixed;
+            position: absolute;
             z-index: 5;
-            top: 20px;
-            right: 20px;
-            opacity: 0.5;
+            top: 80px;
+            right: 40px;
+            opacity: 0.4;
         }
+
     }
 
     //desctop
