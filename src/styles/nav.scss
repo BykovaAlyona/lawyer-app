@@ -68,15 +68,16 @@ nav {
         a {
             display: block;
             padding: 25px 20px;
-            @include transition(0.4s linear);
 
             &:hover {
                 background-color: $color-element;
+                @include transition(0.4s linear);
             }
 
             &:active {
                 background-color: $color-brown;
                 color: $color-element;
+                @include transition(0.4s linear);
             }
         }
 
