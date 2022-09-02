@@ -8,7 +8,9 @@ nav {
     top: 0;
     background-color: $color-white;
     color: $color-brown;
+    font-family: 'Raleway', sans-serif;
     font-weight: bold;
+    font-size: 18px;
 
     #logo {
         padding: 5px 10px;
@@ -71,7 +73,7 @@ nav {
 
             a {
                 display: block;
-                    @include transition(0.4s linear);
+                @include transition(0.4s linear);
 
                 &:hover {
                     background-color: $color-element;
@@ -172,6 +174,7 @@ nav {
             flex-direction: column;
             align-items: center;
         }
+
         #check-menu:checked~label {
             position: absolute;
             z-index: 5;
