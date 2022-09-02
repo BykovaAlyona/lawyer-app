@@ -12,10 +12,6 @@ nav {
     font-weight: bold;
     font-size: 18px;
 
-    a {
-        padding: 25px 20px;
-    }
-
     #logo {
         padding: 5px 10px;
         width: 60px;
@@ -69,51 +65,45 @@ nav {
 
 
     #menu {
+        a {
+            display: block;
+            padding: 25px 20px;
+            @include transition(0.4s linear);
 
-        &>li {
-            &>a {
-                padding: 25px 20px;
+            &:hover {
+                background-color: $color-element;
+            }
+
+            &:active {
+                background-color: $color-brown;
+                color: $color-element;
+            }
+        }
+
+        #submenu {
+            background-color: rgba(243, 243, 243, 0.8);
+            box-shadow: 0 0 5px rgb(83, 83, 83, 1);
+            overflow-y: auto;
+            max-height: 80vh;
+            max-width: 80vw;
+            opacity: 0;
+            visibility: hidden;
+            height: 0;
+
+            li {
+                display: block;
             }
 
             a {
-                display: block;
-                @include transition(0.4s linear);
-
-                &:hover {
-                    background-color: $color-element;
-                }
-
-                &:active {
-                    background-color: $color-brown;
-                    color: $color-element;
-                }
+                padding: 10px 20px;
             }
+        }
 
-            #submenu {
-                background-color: rgba(243, 243, 243, 0.8);
-                box-shadow: 0 0 5px rgb(83, 83, 83, 1);
-                overflow-y: auto;
-                max-height: 80vh;
-                max-width: 80vw;
-                opacity: 0;
-                visibility: hidden;
-                height: 0;
-
-                li {
-                    display: block;
-                }
-
-                a {
-                    padding: 10px 20px;
-                }
-            }
-
-            #check-submenu:checked~#submenu,
-            #submenu:hover {
-                opacity: 1;
-                visibility: visible;
-                height: auto;
-            }
+        #check-submenu:checked~#submenu,
+        #submenu:hover {
+            opacity: 1;
+            visibility: visible;
+            height: auto;
         }
     }
 
